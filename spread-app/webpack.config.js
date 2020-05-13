@@ -2,6 +2,7 @@ const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
+  mode: 'development',
   watch: true,
   watchOptions: {
     aggregateTimeout: 200,
@@ -13,10 +14,7 @@ module.exports = {
   },
   devtool: 'source-map',
   devServer: {
-    contentBase: '../public',
-    hot: true,
-    host: '127.0.0.1',
-    port: '3333'
+    contentBase: '../public'
   },
   output: {
     path: path.resolve(__dirname, '../public'),
@@ -57,8 +55,10 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          'vue-style-loader',
-          'css-loader?-url', // dont load url
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
           'sass-loader'
         ]
       }

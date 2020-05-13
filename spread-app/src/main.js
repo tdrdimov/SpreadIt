@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import App from './App'
 import axios from 'axios'
-import './main.css'
+import './main.scss'
 import { router } from './routes.js'
 import './plugins/moment.js'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
-
 Vue.use(Vuetify)
 const opts = {}
 export default new Vuetify(opts)
